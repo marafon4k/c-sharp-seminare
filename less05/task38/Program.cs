@@ -21,7 +21,7 @@ double[] SetRndFlt(int size)
 
 double GetDiff(double[] arr)
 {
-    double min = 0;
+    double min = 100;
     double max = 0;
     for (int i = 0; i < arr.Length; i++)
     {
