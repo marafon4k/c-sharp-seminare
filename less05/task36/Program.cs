@@ -4,26 +4,19 @@
 // [3, 7, 23, 12] -> 19
 // [-4, -6, 89, 6] -> 0
 
-while (true) // Не понял, что значит "одномерный массив", решил добавить проверку на четность введенного числа
-{
-    Console.WriteLine("Введите количетсво элеметов в массив: ");
-    int amount = Convert.ToInt32(Console.ReadLine());
-    if (amount % 2 != 0) Console.WriteLine("Вы ввели нечетное число!");
-    if (amount % 2 == 0)
-    {
-        Console.WriteLine(CheckEvenPositionArr(SetRndInt(amount)));
-        break;
-    }
-}
+Console.WriteLine("Введите количетсво элеметов в массив: ");
+int amount = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"\nСумма элементов на нечетных позициях: {CheckEvenPositionArr(SetRndInt(amount))}");
 
 int[] SetRndInt(int size) // Задаем массив с рандомными значениями от -99 до 99
 {
     int[] arr = new int[size];
     Random rnd = new Random();
+    Console.Write("Массив создан: ");
     for (int i = 0; i < arr.Length; i++)
     {
         arr[i] = rnd.Next(-99, 100);
-        Console.WriteLine(arr[i]); // Выводил для теста цифр
+        Console.Write($"{arr[i]} "); // Выводил для теста цифр
     }
     return arr;
 }
