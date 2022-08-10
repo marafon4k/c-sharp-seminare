@@ -5,16 +5,17 @@
 
 Console.WriteLine("Введите количетсво элеметов в массив: ");
 int amount = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(GetDiff(SetRndFlt(amount)));
+Console.WriteLine($"\nРазница между минимальным и максимальным числом массива = {Math.Round(GetDiff(SetRndFlt(amount)), 2)}");
 
 double[] SetRndFlt(int size)
 {
     double[] arr = new double[size];
     Random rnd = new Random();
+    Console.Write("Массив создан: ");
     for (int i = 0; i < arr.Length; i++)
     {
         arr[i] = Math.Round(rnd.NextDouble() * 100, 2);
-        Console.WriteLine(arr[i]); // Выводил для теста цифр
+        Console.Write($"{arr[i]} ");
     }
     return arr;
 }
