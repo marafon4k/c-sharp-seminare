@@ -12,10 +12,11 @@
 int[] SetRndPosInt (int size) {
     int[] arr = new int[size];
     Random rnd = new Random();
+    Console.Write("Массив создан: ");
     for (int i = 0; i < arr.Length; i++)
     {
         arr[i] = rnd.Next(100, 1000);
-        // Console.WriteLine(arr[i]); // Выводил для теста цифр
+        Console.Write($"{arr[i]} "); // Выводил для теста цифр
     }
     return arr;
 }
@@ -33,4 +34,4 @@ int GetEvenInt (int[] arr) {
 
 Console.WriteLine("Введите количетсво элеметов в массив: ");
 int amount = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(GetEvenInt(SetRndPosInt(amount)));
+Console.WriteLine($"\nКоличество четных чисел: {GetEvenInt(SetRndPosInt(amount))}");
