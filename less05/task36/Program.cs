@@ -6,9 +6,11 @@
 
 Console.WriteLine("Введите количетсво элеметов в массив: ");
 int amount = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine($"\nСумма элементов на нечетных позициях: {CheckEvenPositionArr(SetRndInt(amount))}");
+var arr = SetRandomInt(amount);
+var diff = CheckEvenPositionArr(arr);
+Console.WriteLine($"Разница мин. и макс. числом массива - {diff}");
 
-int[] SetRndInt(int size) // Задаем массив с рандомными значениями от -99 до 99
+int[] SetRandomInt(int size) // Задаем массив с рандомными значениями от -99 до 99
 {
     int[] arr = new int[size];
     Random rnd = new Random();

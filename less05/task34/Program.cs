@@ -34,4 +34,6 @@ int GetEvenInt (int[] arr) {
 
 Console.WriteLine("Введите количетсво элеметов в массив: ");
 int amount = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine($"\nКоличество четных чисел: {GetEvenInt(SetRndPosInt(amount))}");
+var arr = SetRndPosInt(amount);
+var diff = GetEvenInt(arr);
+Console.WriteLine($"\nКоличество четных чисел в массиве - {diff}");

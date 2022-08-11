@@ -5,9 +5,11 @@
 
 Console.WriteLine("Введите количетсво элеметов в массив: ");
 int amount = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine($"\nРазница между минимальным и максимальным числом массива = {Math.Round(GetDiff(SetRndFlt(amount)), 2)}");
+var arr = SetRandomDouble(amount);
+var diff = GetDiff(arr);
+Console.WriteLine($"Разница мин. и макс. числом массива - {diff.ToString("F2")}");
 
-double[] SetRndFlt(int size)
+double[] SetRandomDouble(int size)
 {
     double[] arr = new double[size];
     Random rnd = new Random();
