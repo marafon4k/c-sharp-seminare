@@ -52,13 +52,18 @@ void FindMatrix(int[,] matrix)
             if (ints[0] == i + 1 && ints[1] == j + 1)
             {
                 neededPos = matrix[i, j];
-                break;
             }
-            else neededPos = -1;
+            if (ints[0] > matrix.GetLength(0) && ints[0] > matrix.GetLength(1))
+            {
+                neededPos = -1;
+            }
+            if (ints[1] > matrix.GetLength(0) && ints[1] > matrix.GetLength(1))
+            {
+                neededPos = -1;
+            }
         }
     }
     if (neededPos >= 0) Console.WriteLine($"На позиции строка {ints[0]}, столбец {ints[1]} число - {neededPos}]");
     else Console.WriteLine($"Строка {ints[0]}, столбец {ints[1]} - такого числа в массиве нет");
 }
-
 FindMatrix(matrixResoult);
